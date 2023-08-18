@@ -7,10 +7,10 @@
 ---
 
 ## Summary
-1. [API]()
-1. [Plannings]()
-1. [Shift]()
-1. [Reservations]()
+1. [API](https://github.com/lybe-source/shiftheroes#api)
+1. [Plannings](https://github.com/lybe-source/shiftheroes#plannings)
+1. [Shift](https://github.com/lybe-source/shiftheroes#shifts)
+1. [Reservations](https://github.com/lybe-source/shiftheroes#r%C3%A9servations)
 
 ---
 
