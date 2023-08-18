@@ -10,7 +10,7 @@
 1. [API](https://github.com/lybe-source/shiftheroes#api)
 1. [Plannings](https://github.com/lybe-source/shiftheroes#plannings)
 1. [Shift](https://github.com/lybe-source/shiftheroes#shifts)
-1. [Reservations](https://github.com/lybe-source/shiftheroes#r%C3%A9servations)
+1. [Reservations](https://github.com/lybe-source/shiftheroes#reservations)
 1. [Converter](https://github.com/lybe-source/shiftheroes#converter)
 
 ---
@@ -27,11 +27,14 @@ Les plannings sont la ressource centrale de l'API. Tu peux lister tous les plann
 - Lister les plannings ```GET /api/v1/plannings```  
 
 Endpoint : ```GET /api/v1/plannings``` Requête (sans filtre) :  
-```bash
+
+```curl
 curl -X GET "https://shiftheroes.fr/api/v1/plannings" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
+
 OR  
-```bash
+
+```PowerShell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
@@ -39,11 +42,14 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings" -He
 ```
 
 Requête (avec filtre de type) :  
-```bash
+
+```curl
 curl -X GET "https://shiftheroes.fr/api/v1/plannings?type=TYPE" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
+
 OR  
-```bash
+
+```PowerShell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
@@ -51,6 +57,7 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings?type
 ```
 
 Réponse :  
+
 ```bash
 [ { "id": "X05fNV", "planning_type": "daily", "state": "available", "published_at": "2023-07-07T08:46:45.215Z" }, { "id": "e6bdK2", "planning_type": "permanent", "state": "available", "published_at": "2023-07-07T08:37:54.353Z" }, { "id": "j9KDf4", "planning_type": "weekly", "state": "available", "published_at": "2023-07-07T08:47:58.611Z" } ]
 ```
@@ -64,11 +71,14 @@ Utilisez le paramètre ?type=TYPE pour filtrer les plannings selon leur type (pe
 - Lister les créneaux d'un planning ```GET /api/v1/plannings/:planning_id/shifts```
 
 Endpoint : ```GET /api/v1/plannings/:planning_id/shifts``` Requête :  
-```bash
+
+```curl
 curl -X GET "https://shiftheroes.fr/api/v1/plannings/:planning_id/shifts" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
+
 OR  
-```bash
+
+```PowerShell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
@@ -76,6 +86,7 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 ```
 
 Réponse :  
+
 ```bash
 [ { "id": "lqQFnY", "day": "mardi", "start_hour": "2000-01-01T08:00:00.000Z", "end_hour": "2000-01-01T14:00:00.000Z", "seats": 10, "seats_taken": 1 }, { "id": "x2OFW1", "day": "lundi", "start_hour": "2000-01-01T08:00:00.000Z", "end_hour": "2000-01-01T14:00:00.000Z", "seats": 12, "seats_taken": 0 } // autres shifts... ]
 ```
@@ -85,15 +96,18 @@ Dans l'exemple j'utilise dans l'url *:planning_id* , ce qu'il faut faire c'est m
 
 ---
 
-## Réservations
+## Reservations
 - Lister ses réservations sur un planning ```GET /api/v1/plannings/:planning_id/reservations```
 
 Endpoint : ```GET /api/v1/plannings/:planning_id/reservation``` Requête :  
-```bash
+
+```curl
 curl -X GET "https://shiftheroes.fr/api/v1/plannings/:planning_id/reservations" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
+
 OR  
-```bash
+
+```PowerShell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
@@ -101,6 +115,7 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 ```
 
 Réponse :  
+
 ```bash
 [ { "id": 103, "user_id": 5, "shift_id": "lqQFnY" // autres attributs de la réservation... }, { "id": 104, "user_id": 5, "shift_id": "x2OFW1" // autres attributs de la réservation... } // autres réservations... ]
 ```
@@ -108,11 +123,14 @@ Réponse :
 - Créer une réservation sur un shift ```POST /api/v1/plannings/:planning_id/shifts/:shift_id/reservations```  
 
 Endpoint : ```POST /api/v1/plannings/:planning_id/shifts/:shift_id/reservations``` Requête :  
-```bash
+
+```curl
 curl -X POST "https://shiftheroes.fr/api/v1/plannings/:planning_id/shifts/:shift_id/reservations" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
+
 OR  
-```bash
+
+```PowerShell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
@@ -120,6 +138,7 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 ```
 
 Réponse :  
+
 ```bash
 La réservation est crée avec succès.
 ```
@@ -127,11 +146,14 @@ La réservation est crée avec succès.
 - Supprimer une réservation ```DELETE /api/v1/plannings/:planning_id/shifts/:shift_id/reservations/:reservation_id```  
 
 Endpoint : ```DELETE /api/v1/plannings/:planning_id/shifts/:shift_id/reservations/:reservation_id``` Requête :  
+
 ```curl
 curl -X DELETE "https://shiftheroes.fr/api/v1/plannings/:planning_id/shifts/:shift_id/reservations/:reservation_id" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
+
 OR  
-```powershell
+
+```PowerShell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
@@ -139,6 +161,7 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 ```
 
 Réponse :  
+
 ```bash
 La réservation est supprimée avec succès.
 ```
