@@ -90,8 +90,8 @@ def register_to_all_new_shift():
         print("Enregistrement effectué")
         print("-" * 50)
 
-schedule.every().saturday.at('09:59:30', 'Europe/Amsterdam').do(register_to_all_new_shift)
-# schedule.every().day.at("17:59:30", "Europe/Amsterdam").do(register_to_all_new_shift)
+schedule.every().saturday.at("09:59:45", "Europe/Amsterdam").do(register_to_all_new_shift)
+# schedule.every().day.at("17:59:45", "Europe/Amsterdam").do(register_to_all_new_shift)
 
 while True:
     schedule.run_pending()
