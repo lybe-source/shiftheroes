@@ -58,7 +58,7 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings?type
 
 Réponse :  
 
-```bash
+```JSON
 [ { "id": "X05fNV", "planning_type": "daily", "state": "available", "published_at": "2023-07-07T08:46:45.215Z" }, { "id": "e6bdK2", "planning_type": "permanent", "state": "available", "published_at": "2023-07-07T08:37:54.353Z" }, { "id": "j9KDf4", "planning_type": "weekly", "state": "available", "published_at": "2023-07-07T08:47:58.611Z" } ]
 ```
 
@@ -87,8 +87,8 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 
 Réponse :  
 
-```bash
-[ { "id": "lqQFnY", "day": "mardi", "start_hour": "2000-01-01T08:00:00.000Z", "end_hour": "2000-01-01T14:00:00.000Z", "seats": 10, "seats_taken": 1 }, { "id": "x2OFW1", "day": "lundi", "start_hour": "2000-01-01T08:00:00.000Z", "end_hour": "2000-01-01T14:00:00.000Z", "seats": 12, "seats_taken": 0 } // autres shifts... ]
+```JSON
+[ { "id": "lqQFnY", "day": "mardi", "start_hour": "2000-01-01T08:00:00.000Z", "end_hour": "2000-01-01T14:00:00.000Z", "seats": 10, "seats_taken": 1 }, { "id": "x2OFW1", "day": "lundi", "start_hour": "2000-01-01T08:00:00.000Z", "end_hour": "2000-01-01T14:00:00.000Z", "seats": 12, "seats_taken": 0 } ]
 ```
 
 Astuce :  
@@ -116,8 +116,8 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 
 Réponse :  
 
-```bash
-[ { "id": 103, "user_id": 5, "shift_id": "lqQFnY" // autres attributs de la réservation... }, { "id": 104, "user_id": 5, "shift_id": "x2OFW1" // autres attributs de la réservation... } // autres réservations... ]
+```JSON
+[ { "id": 103, "user_id": 5, "shift_id": "lqQFnY" }, { "id": 104, "user_id": 5, "shift_id": "x2OFW1" } ]
 ```
 
 - Créer une réservation sur un shift ```POST /api/v1/plannings/:planning_id/shifts/:shift_id/reservations```  
