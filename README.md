@@ -11,6 +11,7 @@
 1. [Plannings](https://github.com/lybe-source/shiftheroes#plannings)
 1. [Shift](https://github.com/lybe-source/shiftheroes#shifts)
 1. [Reservations](https://github.com/lybe-source/shiftheroes#r%C3%A9servations)
+1. [Converter](https://github.com/lybe-source/shiftheroes#converter)
 
 ---
 
@@ -140,6 +141,15 @@ $response = Invoke-WebRequest -Uri "https://shiftheroes.fr/api/v1/plannings/:pla
 Réponse :  
 ```bash
 La réservation est supprimée avec succès.
+```
+
+---
+
+## Converter
+
+I've used this to convert Curl requests to Python
+```
+[Curl Converter](https://curlconverter.com/python/)
 ```
 
 ---
