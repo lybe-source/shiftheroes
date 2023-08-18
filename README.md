@@ -127,11 +127,11 @@ La réservation est crée avec succès.
 - Supprimer une réservation ```DELETE /api/v1/plannings/:planning_id/shifts/:shift_id/reservations/:reservation_id```  
 
 Endpoint : ```DELETE /api/v1/plannings/:planning_id/shifts/:shift_id/reservations/:reservation_id``` Requête :  
-```Curl
+```curl
 curl -X DELETE "https://shiftheroes.fr/api/v1/plannings/:planning_id/shifts/:shift_id/reservations/:reservation_id" -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
 OR  
-```Powershell
+```powershell
 $headers = @{
     "Authorization" = "Bearer YOUR_API_TOKEN"
 }
