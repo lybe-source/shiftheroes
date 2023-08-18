@@ -147,9 +147,7 @@ La réservation est supprimée avec succès.
 
 ## Converter
 
-I've used this to convert Curl requests to Python
-```
+I've used this to convert Curl requests to Python  
 [Curl Converter](https://curlconverter.com/python/)
-```
 
 ---
