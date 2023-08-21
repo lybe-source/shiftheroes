@@ -37,7 +37,7 @@ def register_to_all_new_shift():
 
         for i in planning_initiale:
             planning_id = i['id']
-            print(f"L'ID du planning initiale : {planning_id}")
+            print(f"L'ID du planning initiale est toujours : {planning_id}")
 
         print("-" * 50)
 
